@@ -4,8 +4,6 @@ import Helmet from 'react-helmet'
 
 import {FaFacebook, FaTwitter} from 'react-icons/fa'
 
-import {Layout} from '../components/layout'
-
 import {Card} from '../components/card'
 import {Chip} from '../components/chip'
 
@@ -43,7 +41,7 @@ export default class AuthorListPage extends React.Component<PropsInterface> {
     const facebookAppID = this.props.data.site.siteMetadata.fbApp
 
     return (
-      <Layout location={this.props.location}>
+      <>
         <Helmet
           htmlAttributes={{lang: 'en'}}
           meta={[
@@ -68,7 +66,7 @@ export default class AuthorListPage extends React.Component<PropsInterface> {
               property: 'og:url',
             },
             {
-              content: 'article',
+              content: 'website',
               property: 'og:type',
             },
             {
@@ -106,6 +104,14 @@ export default class AuthorListPage extends React.Component<PropsInterface> {
             {
               content: 'banner',
               property: 'og:image:alt',
+            },
+            {
+              content: '1500',
+              property: 'og:image:width',
+            },
+            {
+              content: '788',
+              property: 'og:image:height',
             },
             {
               content: 'summary_large_image',
@@ -171,7 +177,7 @@ export default class AuthorListPage extends React.Component<PropsInterface> {
             </Card>
           )
         })}
-      </Layout>
+      </>
     )
   }
 }

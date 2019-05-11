@@ -7,8 +7,6 @@ import {rhythm} from '../utils/typography'
 import {FluidObject} from 'gatsby-image'
 import AdSense from 'react-adsense'
 
-import {Layout} from '../components/layout'
-
 import {Navigation} from '../components/navigation'
 import {NavigationContainer} from '../components/navigation-container'
 import {NavigationItem} from '../components/navigation-item'
@@ -100,7 +98,7 @@ export default class BlogPostTemplate extends React.Component<PropsInterface> {
     }
 
     return (
-      <Layout location={this.props.location}>
+      <>
         <Helmet
           htmlAttributes={{lang: 'en'}}
           meta={[
@@ -170,6 +168,14 @@ export default class BlogPostTemplate extends React.Component<PropsInterface> {
             {
               content: 'banner',
               property: 'og:image:alt',
+            },
+            {
+              content: '1500',
+              property: 'og:image:width',
+            },
+            {
+              content: '788',
+              property: 'og:image:height',
             },
             {
               content: 'summary_large_image',
@@ -276,7 +282,7 @@ export default class BlogPostTemplate extends React.Component<PropsInterface> {
             </NavigationContainer>
           </Navigation>
         </Card>
-      </Layout>
+      </>
     )
   }
 }
